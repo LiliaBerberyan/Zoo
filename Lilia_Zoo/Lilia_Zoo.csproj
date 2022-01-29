@@ -53,9 +53,11 @@
     <Compile Include="Animal\Animal.cs" />
     <Compile Include="Animal\AnimalEnumerator.cs" />
     <Compile Include="Animal\Elephant.cs" />
-    <Compile Include="ICage.cs" />
+    <Compile Include="ILogger.cs" />
+    <Compile Include="Zoo\ICage.cs" />
+    <Compile Include="FileLogger\Logger.cs" />
     <Compile Include="Zoo\Cage.cs" />
-    <Compile Include="FoodType.cs" />
+    <Compile Include="Animal\FoodType.cs" />
     <Compile Include="Animal\Horse.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

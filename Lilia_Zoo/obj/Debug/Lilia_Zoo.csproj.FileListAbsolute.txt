@@ -7,3 +7,12 @@ C:\Users\Asus\source\repos\Lilia_Zoo\Lilia_Zoo\obj\Debug\Lilia_Zoo.pdb
 C:\Users\Asus\source\repos\Lilia_Zoo\Lilia_Zoo\obj\Debug\Lilia_Zoo.csproj.ResolveComReference.cache
 C:\Users\Asus\source\repos\Lilia_Zoo\Lilia_Zoo\bin\Debug\AxInterop.WMPLib.dll
 C:\Users\Asus\source\repos\Lilia_Zoo\Lilia_Zoo\obj\Debug\Lilia_Zoo.csproj.CopyComplete
+C:\Users\Asus\source\repos\Zoo\Lilia_Zoo\obj\Debug\Lilia_Zoo.csprojAssemblyReference.cache
+C:\Users\Asus\source\repos\Zoo\Lilia_Zoo\obj\Debug\Lilia_Zoo.csproj.ResolveComReference.cache
+C:\Users\Asus\source\repos\Zoo\Lilia_Zoo\obj\Debug\Lilia_Zoo.exe
+C:\Users\Asus\source\repos\Zoo\Lilia_Zoo\obj\Debug\Lilia_Zoo.pdb
+C:\Users\Asus\source\repos\Zoo\Lilia_Zoo\bin\Debug\Lilia_Zoo.exe.config
+C:\Users\Asus\source\repos\Zoo\Lilia_Zoo\bin\Debug\Lilia_Zoo.exe
+C:\Users\Asus\source\repos\Zoo\Lilia_Zoo\bin\Debug\Lilia_Zoo.pdb
+C:\Users\Asus\source\repos\Zoo\Lilia_Zoo\bin\Debug\AxInterop.WMPLib.dll
+C:\Users\Asus\source\repos\Zoo\Lilia_Zoo\obj\Debug\Lilia_Zoo.csproj.CopyComplete

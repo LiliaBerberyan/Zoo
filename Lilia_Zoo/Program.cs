@@ -1,4 +1,6 @@
-﻿namespace Lilia_Zoo
+﻿using System;
+
+namespace Lilia_Zoo
 {
     class Program
     {
@@ -9,8 +11,7 @@
             cage.AddAnimal(new Elephant(3654, 10));
             cage.AddAnimal(new Elephant(6543, 5));
             myZoo.AddCage((Cage)cage);
-
+            myZoo.StartFeeding();
         }
-
-    }
+}
 }

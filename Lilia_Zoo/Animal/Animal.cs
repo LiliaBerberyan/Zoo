@@ -9,6 +9,8 @@ namespace Lilia_Zoo
     {
         private int _id;
         private int _stomachSize;
+        private Cage _cage;
+        private ILogger _logger = new Logger(typeof(Animal));
         protected string url;
         protected int MaxSize { get; set; }
         public bool Alive { get; set; }
@@ -31,7 +33,11 @@ namespace Lilia_Zoo
                 {
                     _id = value;
                 }
-                else throw new ArgumentException("Valu is out of range");
+                else
+                {
+                    _logger.Error("Valu is out of range");
+                    throw new ArgumentException("Valu is out of range");
+                }
             }
         }
         protected int StomachSize
@@ -64,6 +70,11 @@ namespace Lilia_Zoo
                 StomachSize--;
             }
         }
+        public void SetCage(Cage cage)
+        {
+            _cage = cage;
+            _cage.FoodArrived += Feed;
+        }
         protected bool CanEat(FoodType food)
         {
             if (AvailableFood.Contains(food))
@@ -79,21 +90,25 @@ namespace Lilia_Zoo
                 if (CanEat(food) || StomachSize + 2 < MaxSize)
                 {
                     Console.WriteLine($"Feeding {this.ToString()} is done");
+                    _logger.Info($"Feeding {this.ToString()} is done");
                     StomachSize += 2;
                 }
                 else if (!CanEat(food))
                 {
                     Console.WriteLine($"{this.ToString()} can't eat {food}");
+                    _logger.Info($"{this.ToString()} can't eat {food}");
                 }
                 else if (CanEat(food) || StomachSize > MaxSize - 2)
                 {
                     Console.WriteLine($"{this.ToString()} isn't hungry");
+                    _logger.Info($"{this.ToString()} isn't hungry");
                 }
             }
             else
             {
                 Voice();
                 Console.WriteLine($"{this.ToString()} is dead");
+                _logger.Info($"{this.ToString()} is dead");
             }
         }
         public override string ToString()
