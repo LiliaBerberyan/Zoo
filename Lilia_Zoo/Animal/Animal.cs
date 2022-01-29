@@ -1,15 +1,11 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Timers;
 using WMPLib;
 
 namespace Lilia_Zoo
 {
-    abstract class Animal 
+    abstract class Animal
     {
         private int _id;
         private int _stomachSize;
@@ -97,7 +93,7 @@ namespace Lilia_Zoo
             else
             {
                 Voice();
-                Console.WriteLine($"{this.ToString()} is dead");              
+                Console.WriteLine($"{this.ToString()} is dead");
             }
         }
         public override string ToString()

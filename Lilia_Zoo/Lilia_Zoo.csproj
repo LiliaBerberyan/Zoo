@@ -53,6 +53,7 @@
     <Compile Include="Animal\Animal.cs" />
     <Compile Include="Animal\AnimalEnumerator.cs" />
     <Compile Include="Animal\Elephant.cs" />
+    <Compile Include="ICage.cs" />
     <Compile Include="Zoo\Cage.cs" />
     <Compile Include="FoodType.cs" />
     <Compile Include="Animal\Horse.cs" />

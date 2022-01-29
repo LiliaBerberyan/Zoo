@@ -1,25 +1,25 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Timers;
 
 namespace Lilia_Zoo
 {
-    class Zoo //: IEnumerable<Animal>
+
+    class Zoo
     {
         private ZooWorker _worker;
         public Zoo()
         {
             _worker = new ZooWorker();
-            Cages = new List<Cage<Animal>>();
+            Cages = new List<Cage>();
         }
-        private List<Cage<Animal>> Cages { get; set; }
+        private List<Cage> Cages { get; set; }
 
         Timer timer = new Timer(TimeSpan.FromSeconds(5).TotalMilliseconds);
-        
+        public void AddCage(Cage cage)
+        {
+            Cages.Add(cage);
+        }
         public void StartWork()
         {
             timer.AutoReset = true;
@@ -29,23 +29,8 @@ namespace Lilia_Zoo
         }
         private void Timer_Elapsed(object sender, ElapsedEventArgs e)
         {
-            var random = new Random();
-            //foreach (Animal animal in Animals)
-            //{
-            //    _worker.FeedAnimal(animal, random.NextEnum<FoodType>());
-            //    if (!animal.Alive)
-            //    {
-            //        RemoveAnimal(animal);
-            //    }
-            //}
+
         }
-        //public IEnumerator GetEnumerator()
-        //{
-        //    return new AnimalEnumerator(Cages);
-        //}
-        //IEnumerator<Animal> IEnumerable<Animal>.GetEnumerator()
-        //{
-        //    return (IEnumerator<Animal>)GetEnumerator();
-        //}
+
     }
 }

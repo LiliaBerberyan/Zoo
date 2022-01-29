@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Lilia_Zoo
 {
-     static class RandomChoose
+    static class RandomChoose
     {
         public static T NextEnum<T>(this Random random)
         {

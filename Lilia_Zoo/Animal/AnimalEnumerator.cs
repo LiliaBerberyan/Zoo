@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Lilia_Zoo
 {
@@ -11,11 +8,19 @@ namespace Lilia_Zoo
     {
         Animal[] animals;
         int position = -1;
+        private List<object> animals1;
+
         public AnimalEnumerator(List<Animal> animals)
         {
             this.animals = new Animal[animals.Count];
             animals.CopyTo(this.animals);
         }
+
+        public AnimalEnumerator(List<object> animals1)
+        {
+            this.animals1 = animals1;
+        }
+
         public Animal Current
         {
             get

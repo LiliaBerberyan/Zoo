@@ -1,26 +1,33 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace Lilia_Zoo
 {
-    class Cage<T> where T : Animal
+    class Cage : ICage<Animal>
     {
         public Cage()
         {
-            Animals = new List<T>();
+            Animals = new List<Animal>();
         }
-        private List<T> Animals { get; set; }
-        public void AddAnimal(T animal)
+        private List<Animal> Animals { get; set; }
+        public void AddAnimal(Animal animal)
         {
             Animals.Add(animal);
         }
-        public void RemoveAnimal(T animal)
+        public void RemoveAnimal(Animal animal)
         {
             Animals.Remove(animal);
         }
-
+        public void PutFood()
+        { 
+        
+        }
+        //public IEnumerator GetEnumerator()
+        //{
+        //    return new AnimalEnumerator(Animals);
+        //}
+        //IEnumerator<Animal> IEnumerable<Animal>.GetEnumerator()
+        //{
+        //    return (IEnumerator<Animal>)GetEnumerator();
+        //}
     }
 }
