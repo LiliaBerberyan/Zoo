@@ -6,13 +6,12 @@ namespace Lilia_Zoo
 {
     class Zoo
     {
-        private ZooWorker _worker;
         public Zoo()
         {
-            _worker = new ZooWorker();
             Cages = new List<Cage>();
         }
         private List<Cage> Cages { get; set; }
+
         ILogger _logger = new Logger(typeof(Zoo));
 
         Timer timer = new Timer(TimeSpan.FromSeconds(5).TotalMilliseconds);
@@ -30,7 +29,7 @@ namespace Lilia_Zoo
         }
         private void Timer_Elapsed(object sender, ElapsedEventArgs e)
         {
-
+            StartFeeding();
         }
         public void StartFeeding()
         {        

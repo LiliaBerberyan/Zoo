@@ -31,13 +31,5 @@ namespace Lilia_Zoo
             _logger.Info($"Food put to {this.ToString()}");
         }
 
-        //public IEnumerator GetEnumerator()
-        //{
-        //    return new AnimalEnumerator(Animals);
-        //}
-        //IEnumerator<Animal> IEnumerable<Animal>.GetEnumerator()
-        //{
-        //    return (IEnumerator<Animal>)GetEnumerator();
-        //}
     }
 }

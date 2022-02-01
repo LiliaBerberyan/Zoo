@@ -14,6 +14,7 @@ namespace Lilia_Zoo
         {
             timer.Start();
             url = "Horse.mp3";
+            count = 1;
         }
         protected override List<FoodType> AvailableFood { get; set; } = new List<FoodType>() { FoodType.Fruit, FoodType.Grass };
     }

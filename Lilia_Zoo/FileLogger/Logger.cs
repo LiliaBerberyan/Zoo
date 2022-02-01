@@ -12,18 +12,18 @@ namespace Lilia_Zoo
         public Logger(Type type)
         {
             Type = type;
-        }
-        private Type Type { get; }     
-        private  string Path
-        {
-            get 
+
+            if (!File.Exists(Path))
             {
-                return ToString();
+                File.Create(Path).Close();
             }
         }
+        private Type Type { get; }
+
+        private string Path = "Logger.txt";
         public void Info(string info)
         {
-            string log = $"{this.Type.Name}- Exeption: {info}, {DateTime.Now}";
+            string log = $"{this.Type.Name}- Info: {info}, {DateTime.Now}";
             Log(log);
         }
         public void Error(string error)
@@ -35,10 +35,5 @@ namespace Lilia_Zoo
         {
             File.AppendAllText(Path, message + "\n");
         }
-        public override string ToString()
-        {
-            return DateTime.Now.Year.ToString() + "/" + DateTime.Now.Day.ToString() + "/" + DateTime.Now.Month.ToString();
-        }
-
     }
 }

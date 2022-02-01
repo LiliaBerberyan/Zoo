@@ -12,6 +12,7 @@ namespace Lilia_Zoo
         private Cage _cage;
         private ILogger _logger = new Logger(typeof(Animal));
         protected string url;
+        protected int count;
         protected int MaxSize { get; set; }
         public bool Alive { get; set; }
         public Animal(int id, int maxSize)
@@ -20,6 +21,7 @@ namespace Lilia_Zoo
             StomachSize = maxSize;
             this.MaxSize = maxSize;
             Alive = true;
+            GetHungry();
         }
         protected int Id
         {
@@ -50,7 +52,7 @@ namespace Lilia_Zoo
             {
                 if (value < 0 || value > MaxSize)
                 {
-                    Alive = false;
+                    Alive = false;                   
                 }
                 else _stomachSize = value;
             }
@@ -58,16 +60,16 @@ namespace Lilia_Zoo
         protected abstract List<FoodType> AvailableFood { get; set; }
 
         protected Timer timer = new Timer(TimeSpan.FromSeconds(6).TotalMilliseconds);
-        public void CallToEat()
+        public void GetHungry()
         {
             timer.AutoReset = true;
             timer.Elapsed += Timer_Elapsed;
         }
-        protected virtual void Timer_Elapsed(object sender, ElapsedEventArgs e)
+        protected void Timer_Elapsed(object sender, ElapsedEventArgs e)
         {
             if (StomachSize <= MaxSize)
             {
-                StomachSize--;
+                StomachSize -= count;
             }
         }
         public void SetCage(Cage cage)
