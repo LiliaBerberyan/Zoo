@@ -143,3 +143,10 @@ Zoo- Info: Feeding Animals in Lilia_Zoo.Cage started, 2/1/2022 9:24:21 PM
 Animal- Info: Feeding 1789_Lilia_Zoo.Horse is done, 2/1/2022 9:24:21 PM
 Animal- Info: Feeding 2343_Lilia_Zoo.Horse is done, 2/1/2022 9:24:21 PM
 Cage- Info: Food put to Lilia_Zoo.Cage, 2/1/2022 9:24:21 PM
+Cage- Info: 3654_Lilia_Zoo.Elephant added to Lilia_Zoo.Cage, 2/9/2022 8:18:47 PM
+Cage- Info: 6543_Lilia_Zoo.Elephant added to Lilia_Zoo.Cage, 2/9/2022 8:18:47 PM
+Zoo- Info: Lilia_Zoo.Cage added to Zoo, 2/9/2022 8:18:47 PM
+Cage- Info: 3654_Lilia_Zoo.Elephant added to Lilia_Zoo.Cage, 2/9/2022 8:21:25 PM
+Cage- Info: 6543_Lilia_Zoo.Elephant added to Lilia_Zoo.Cage, 2/9/2022 8:21:25 PM
+Zoo- Info: Lilia_Zoo.Cage added to Zoo, 2/9/2022 8:21:25 PM
+Cage- Info: 83654_Lilia_Zoo.Elephant added to Lilia_Zoo.Cage, 2/9/2022 9:21:36 PM

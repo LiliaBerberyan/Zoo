@@ -40,7 +40,9 @@
       <HintPath>..\packages\WMPLib.1.0.0\lib\Interop.WMPLib.dll</HintPath>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
+    <Reference Include="Microsoft.Build.Framework" />
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -54,6 +56,9 @@
     <Compile Include="Animal\AnimalEnumerator.cs" />
     <Compile Include="Animal\Elephant.cs" />
     <Compile Include="FileLogger\ILogger.cs" />
+    <Compile Include="Food.cs" />
+    <Compile Include="MyAttribute.cs" />
+    <Compile Include="MyEventArgs.cs" />
     <Compile Include="Zoo\ICage.cs" />
     <Compile Include="FileLogger\Logger.cs" />
     <Compile Include="Zoo\Cage.cs" />

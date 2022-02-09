@@ -32,13 +32,20 @@ namespace Lilia_Zoo
             StartFeeding();
         }
         public void StartFeeding()
-        {        
+        {
             for (int i = 0; i < Cages.Count; i++)
             {
                 _logger.Info($"Feeding Animals in {Cages[i].ToString()} started");
-                Cages[i].PutFood(FoodType.Grass);
+                if (Cages[i].GetAnimalType().Name=="Horse" || Cages[i].GetAnimalType().Name == "Elephant")
+                {
+                    Cages[i].PutFood(new MyEventArgs(new Food(FoodType.Grass, 10)));
+                }
+                if (Cages[i].GetAnimalType().Name == "Horse")
+                {
+                    Cages[i].PutFood(new MyEventArgs(new Food(FoodType.Fruit, 10)));
+                }
+              
             }
         }
-
     }
 }

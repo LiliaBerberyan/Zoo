@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Microsoft.Build.Framework;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Timers;
 using WMPLib;
 
@@ -23,6 +25,7 @@ namespace Lilia_Zoo
             Alive = true;
             GetHungry();
         }
+
         protected int Id
         {
             get
@@ -52,7 +55,7 @@ namespace Lilia_Zoo
             {
                 if (value < 0 || value > MaxSize)
                 {
-                    Alive = false;                   
+                    Alive = false;
                 }
                 else _stomachSize = value;
             }
@@ -77,30 +80,30 @@ namespace Lilia_Zoo
             _cage = cage;
             _cage.FoodArrived += Feed;
         }
-        protected bool CanEat(FoodType food)
+        protected bool CanEat(Food food)
         {
-            if (AvailableFood.Contains(food))
+            if (AvailableFood.Contains(food.Type))
             {
                 return true;
             }
             else return false;
         }
-        public void Feed(FoodType food)
+        public void Feed(object o, MyEventArgs args)
         {
             if (Alive)
             {
-                if (CanEat(food) || StomachSize + 2 < MaxSize)
+                if (CanEat(args.Food) || StomachSize + 2 < MaxSize)
                 {
                     Console.WriteLine($"Feeding {this.ToString()} is done");
                     _logger.Info($"Feeding {this.ToString()} is done");
                     StomachSize += 2;
                 }
-                else if (!CanEat(food))
+                else if (!CanEat(args.Food))
                 {
-                    Console.WriteLine($"{this.ToString()} can't eat {food}");
-                    _logger.Info($"{this.ToString()} can't eat {food}");
+                    Console.WriteLine($"{this.ToString()} can't eat {args.Food}");
+                    _logger.Info($"{this.ToString()} can't eat {args.Food}");
                 }
-                else if (CanEat(food) || StomachSize > MaxSize - 2)
+                else if (CanEat(args.Food) || StomachSize > MaxSize - 2)
                 {
                     Console.WriteLine($"{this.ToString()} isn't hungry");
                     _logger.Info($"{this.ToString()} isn't hungry");

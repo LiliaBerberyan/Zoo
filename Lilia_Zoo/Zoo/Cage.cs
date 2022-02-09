@@ -13,7 +13,7 @@ namespace Lilia_Zoo
 
         ILogger _logger = new Logger(typeof(Cage));
 
-        public event Action<FoodType> FoodArrived;
+        public event EventHandler<MyEventArgs> FoodArrived;
         public void AddAnimal(Animal animal)
         {
             Animals.Add(animal);
@@ -25,11 +25,18 @@ namespace Lilia_Zoo
             Animals.Remove(animal);
             _logger.Info($"{animal.ToString()} removed from {this.ToString()}");
         }
-        public void PutFood(FoodType food)
+        public void PutFood(MyEventArgs Food)
         {
-            FoodArrived?.Invoke(food);
+            FoodArrived?.Invoke(this, Food);
             _logger.Info($"Food put to {this.ToString()}");
         }
-
+        public Type GetAnimalType()
+        {
+            if (Animals.Count != 0)
+            {
+                return Animals[0].GetType();               
+            }
+            else throw new Exception();
+        }
     }
 }
