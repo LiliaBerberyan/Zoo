@@ -12,7 +12,6 @@ namespace Lilia_Zoo
     {
         public Horse(int id, int maxSize) : base(id, maxSize)
         {
-            timer.Start();
             url = "Horse.mp3";
             count = 1;
         }

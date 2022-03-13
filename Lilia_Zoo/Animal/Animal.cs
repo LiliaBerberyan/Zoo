@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Timers;
+using System.Threading;
 using WMPLib;
 
 namespace Lilia_Zoo
@@ -25,7 +25,6 @@ namespace Lilia_Zoo
             Alive = true;
             GetHungry();
         }
-
         protected int Id
         {
             get
@@ -61,20 +60,35 @@ namespace Lilia_Zoo
             }
         }
         protected abstract List<FoodType> AvailableFood { get; set; }
-
-        protected Timer timer = new Timer(TimeSpan.FromSeconds(6).TotalMilliseconds);
-        public void GetHungry()
+        private void GetHungry()
         {
-            timer.AutoReset = true;
-            timer.Elapsed += Timer_Elapsed;
+            Thread thread = new Thread(new ThreadStart(SizeChange));
+            thread.Start();
         }
-        protected void Timer_Elapsed(object sender, ElapsedEventArgs e)
+        private void SizeChange()
         {
-            if (StomachSize <= MaxSize)
+            while (true)
             {
-                StomachSize -= count;
+                Thread.Sleep(9000);
+                if (StomachSize <= MaxSize)
+                {
+                    StomachSize -= count;
+                }
             }
         }
+        //protected Timer timer = new Timer(TimeSpan.FromSeconds(6).TotalMilliseconds);
+        //public void GetHungry()
+        //{
+        //    timer.AutoReset = true;
+        //    timer.Elapsed += Timer_Elapsed;
+        //}
+        //protected void Timer_Elapsed(object sender, ElapsedEventArgs e)
+        //{
+        //    if (StomachSize <= MaxSize)
+        //    {
+        //        StomachSize -= count;
+        //    }
+        //}
         public void SetCage(Cage cage)
         {
             _cage = cage;

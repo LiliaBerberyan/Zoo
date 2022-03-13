@@ -7,7 +7,6 @@ namespace Lilia_Zoo
     {
         public Elephant(int id, int maxSize) : base(id, maxSize)
         {
-            timer.Start();
             url = "Elephant.mp3";
             count = 3;
         }

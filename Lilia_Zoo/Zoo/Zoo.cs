@@ -43,8 +43,7 @@ namespace Lilia_Zoo
                 if (Cages[i].GetAnimalType().Name == "Horse")
                 {
                     Cages[i].PutFood(new MyEventArgs(new Food(FoodType.Fruit, 10)));
-                }
-              
+                }              
             }
         }
     }

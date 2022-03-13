@@ -15,8 +15,6 @@ namespace Lilia_Zoo
             Size = size;
         }
         public FoodType Type { get; }
-
-        
         public int Size { get; set; }
     }
 }
